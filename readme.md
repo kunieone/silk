@@ -22,6 +22,7 @@ Overall, the Silk language is designed to be a pleasure to use, with a focus on 
 - Code blocks: Silk allows you to define code blocks that have their own scope, which can be useful for creating temporary variables or grouping related code together.
 
 ## Getting Started
+## -> [Silk syntax and usage until now](detail_imaginary.md) <-
 
 To start using Silk, you will need to install the Silk compiler on your machine. You can then create a new Silk source file (with a .silk extension) and start writing code.
 
@@ -65,10 +66,9 @@ box Tesla :: Electric + Car {
     }
 }
 
-f __main() {
+f main() {
     // Create a car and a Tesla
     car = Car()
     tesla = Tesla()
 }
 ```
-

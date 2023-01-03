@@ -3,12 +3,26 @@ use std::{env, fs, io::Read};
 use token::{Symbol, Token, TokenType};
 
 pub mod lex;
+pub mod parser;
 pub mod pos;
 pub mod token;
+/*
+let a = (() => {
+  b = 1;
+  return () => {
+    return b++;
+  };
+})();
 
-// fn _test() {
-//     lex::lex(input);
-// }
+console.log(a());
+console.log(a());
+console.log(a());
+console.log(a());
+console.log(a());
+
+*/
+
+ 
 #[derive(Debug, PartialEq, Clone)]
 pub struct TokensBox(Vec<Token>);
 impl TokensBox {

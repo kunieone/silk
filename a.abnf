@@ -1,0 +1,16 @@
+
+# 表达式
+
+expr ::= term { ('+' | '-' | '*' | '/' | '**' | '%' | '&' | '|' | '^' | '<<' | '>>' | 'max'| 'min') term } # 1 |1+1|  1*1
+term ::= factor { ('*' | '/' | '**' | '%' | '&' | '|' | '^' | '<<' | '>>') factor }
+factor ::= number | '(' expr ')' | unaryOp factor
+number ::= digit { digit }
+unaryOp ::= '+' | '-' | '~'
+digit ::= '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+
+# 赋值 
+assignment ::= identifier '=' expr
+
+#  a = 1 max 2 //a: 2
+
+
