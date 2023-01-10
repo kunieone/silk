@@ -10,9 +10,11 @@ pub fn lex(input: &str) -> Vec<Token> {
     let mut tokens: Vec<Token> = Vec::new();
     let mut pos = Foots::new();
     let mut chars = input.chars().peekable();
+
     while let Some(c) = &chars.next() {
         // let mut pos = pos; // define a new local variable
         // pos.update(*c);
+
         pos.update(*c);
         match c {
             c if c.is_alphabetic() => {

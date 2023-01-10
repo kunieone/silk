@@ -6,23 +6,8 @@ pub mod lex;
 pub mod parser;
 pub mod pos;
 pub mod token;
-/*
-let a = (() => {
-  b = 1;
-  return () => {
-    return b++;
-  };
-})();
+pub mod utils;
 
-console.log(a());
-console.log(a());
-console.log(a());
-console.log(a());
-console.log(a());
-
-*/
-
- 
 #[derive(Debug, PartialEq, Clone)]
 pub struct TokensBox(Vec<Token>);
 impl TokensBox {
@@ -54,7 +39,8 @@ fn main() {
     let filename = read_args().unwrap();
     let silk_text = read_file(&filename);
     let tokens_box = TokensBox(lex::lex(&silk_text));
-    tokens_box.debug();
+    println!("{:?}", tokens_box);
+    // tokens_box.debug();
 }
 
 fn read_args() -> Option<String> {
