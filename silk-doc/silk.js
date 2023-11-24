@@ -37,4 +37,17 @@ rl.question('请输入要加密/解密的文本（输入 cmd + enter 结束）: 
     }
   });
   rl.on('line', (line) => {
-    // 如果输入为空，
+    // 如果输入为空，表示结束输入
+    if (line === '') {
+      // 暂停 'keypress' 事件的监听
+      rl.pause();
+      rl.question('请输入偏移量（正数为加密，负数为解密）: ', (shift) => {
+        const encryptedText = caesarCipher(lines.join('\n'), parseInt(shift, 10));
+        console.log('加密/解密结果:', encryptedText);
+        rl.close();
+      });
+    } else {
+      lines.push(line);
+    }
+  });
+});
