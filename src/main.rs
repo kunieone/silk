@@ -1,10 +1,11 @@
-use std::{env, fs, io::Read};
+use std::{cmp::PartialEq, env, fs, io::Read};
 
 use token::{Symbol, Token, TokenType};
 
 pub mod lex;
 pub mod parser;
 pub mod pos;
+pub mod rand;
 pub mod token;
 pub mod utils;
 

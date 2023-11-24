@@ -81,3 +81,31 @@ pub enum Expr {
     BinaryOp(Operator, Box<Expr>, Box<Expr>),
     // other possible expressions here
 }
+
+#[test]
+fn A_test() {
+    trait Swimable {
+        fn swim(self);
+    }
+
+    struct Duck();
+    impl Swimable for Duck {
+        fn swim(self) {
+            println!("{:?}", "Duck is swimming!");
+        }
+    }
+
+    struct Fish();
+    impl Swimable for Fish {
+        fn swim(self) {
+            println!("{:?}", "Fish is swimming!");
+        }
+    }
+
+    fn swim_then_sing<T: Swimable>(item: T) -> T {
+        item
+    }
+    fn swim_then_sing2<T: Swimable>(item: T) -> impl Swimable {
+        item
+    }
+}
