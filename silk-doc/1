@@ -1,0 +1,1 @@
+button->state= ~(button-state== false);

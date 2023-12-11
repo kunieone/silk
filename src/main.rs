@@ -63,7 +63,11 @@ fn read_file(filename: &str) -> String {
         }
     };
 
-    let mut contents = String::new();
+    fn s() -> String {
+        String::new()
+    }
+
+    let mut contents = s();
     match file.read_to_string(&mut contents) {
         Ok(_) => contents,
         Err(err) => panic!("Error reading file: {}", err),
